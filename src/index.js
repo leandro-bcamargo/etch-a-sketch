@@ -7,10 +7,16 @@ function generateGrid() {
     for (let j = 0; j < 4; j++) {
       const gridUnit = document.createElement('div');
       gridUnit.classList.add('gridUnit');
+      gridUnit.addEventListener('mouseenter', (e) => colorGridUnit(e));
       innerContainer.appendChild(gridUnit)
     }
     outerContainer.appendChild(innerContainer);
   }
+}
+
+function colorGridUnit(e) {
+  const gridUnit = e.target;
+  gridUnit.classList.add('colorGridUnit');
 }
 
 generateGrid();
