@@ -1,4 +1,4 @@
-const outerContainer = document.querySelector('#container');
+const outerContainer = document.querySelector('#outerContainer');
 
 function generateGrid() {
   for (let i = 0; i < 4; i++) {
