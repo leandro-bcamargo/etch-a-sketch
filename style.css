@@ -3,6 +3,7 @@
   flex-direction: column;
   width: 500px;
   height: 500px;
+  background-color: black;
 }
 
 .innerContainer {
@@ -10,6 +11,6 @@
 }
 
 .gridUnit {
-  border: 2px black solid;
+  border: 2px white solid;
   box-sizing: border-box;
 }
