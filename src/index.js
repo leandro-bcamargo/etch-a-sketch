@@ -19,14 +19,21 @@ function generateGrid(gridSize) {
   }
 }
 
+function generateRandomNum(min, max) {
+  return Math.floor(Math.random() * (max - min + 1));
+}
+
+function generateRandomRgb() {
+  const r = generateRandomNum(0, 255);
+  const g = generateRandomNum(0, 255);
+  const b = generateRandomNum(0, 255);
+  return `rgb(${r}, ${g}, ${b})`;
+
+}
+
 function colorGridUnit(e) {
   const gridUnit = e.target;
-  const randomBetween = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
-  const r = randomBetween(0, 255);
-  const g = randomBetween(0, 255);
-  const b = randomBetween(0, 255);
-  const rgb = `rgb(${r},${g},${b})`; 
-  gridUnit.style.setProperty('background-color', rgb);
+  gridUnit.style.setProperty('background-color', generateRandomRgb());
   const opacity = isNaN(parseFloat(gridUnit.style.getPropertyValue('opacity'))) ? 1 : parseFloat(gridUnit.style.getPropertyValue('opacity'));
   gridUnit.style.setProperty('opacity', opacity > 0 ? opacity - 0.1 : 0);
 }
