@@ -27,6 +27,8 @@ function colorGridUnit(e) {
   const b = randomBetween(0, 255);
   const rgb = `rgb(${r},${g},${b})`; 
   gridUnit.style.setProperty('background-color', rgb);
+  const opacity = isNaN(parseFloat(gridUnit.style.getPropertyValue('opacity'))) ? 1 : parseFloat(gridUnit.style.getPropertyValue('opacity'));
+  gridUnit.style.setProperty('opacity', opacity > 0 ? opacity - 0.1 : 0);
 }
 
 function setGridSize() {
